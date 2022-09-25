@@ -1,0 +1,87 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 12,
+        "name": "Sign up",
+        "description": "",
+        "id": "locked-out-user-login;sign-up;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 109519237,
+              "error_message": "java.lang.NullPointerException\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy19.isDisplayed(Unknown Source)\n\tat pageObjectsAndActions.LoginPage.applicationLogoDispalyed(LoginPage.java:43)\n\tat StepDefinitions.StepDefinitions.userIsOnTheLoginPage(StepDefinitions.java:20)\n\tat ✽.Given User is on the login page(LoginWithLockedOutUser.feature:7)\n",
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "User is on the login page",
+            "match": {
+              "location": "StepDefinitions.userIsOnTheLoginPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "User captures username and password \"locked_out_user\",\"secret_sauce\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "locked_out_user",
+                  "offset": 37
+                },
+                {
+                  "val": "secret_sauce",
+                  "offset": 55
+                }
+              ],
+              "location": "StepDefinitions.user_captures_username_and_password(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Locked Out User not logged in successfully and error displayed",
+            "match": {
+              "location": "StepDefinitions.lockedOutUserNotLoggedInSuccessfullyAndErrorDisplayed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 1,
+            "name": "@Login"
+          },
+          {
+            "line": 5,
+            "name": "@SignUp"
+          }
+        ]
+      }
+    ],
+    "name": "Locked out user login",
+    "description": "",
+    "id": "locked-out-user-login",
+    "keyword": "Feature",
+    "uri": "LoginWithLockedOutUser.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@Login"
+      }
+    ]
+  }
+]
