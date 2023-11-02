@@ -36,7 +36,6 @@
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
 			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
-			<li class='waves-effect'><a href='#!' onclick="configureView(-1)" view='testrunner-logs-view'><i class='material-icons'>note</i></a></li>
 		</ul>
 
 		<!-- report name -->
@@ -49,7 +48,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Sep 25, 2022 05:26:27 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Nov 2, 2023 12:59:03 PM</span>
 				</a>
 			</li>
 			<li>
@@ -76,7 +75,6 @@
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
-						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -168,10 +166,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='33.333%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -188,48 +186,56 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Locked out user login</span>
-						<span class='test-time'>Sep 25, 2022 05:26:27 PM</span>
+						<span class='test-time'>Nov 2, 2023 12:59:03 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenariooutline node' test-id='2' status='fail'>
-	<span class='duration right label'>0h 0m 0s+185ms</span>
+<div class='scenario node' test-id='2' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@SignUp</span>
+	</div>
+	<span class='duration right label'>0h 0m 19s+667ms</span>
 	<div class='desc'>
-		<b>ScenarioOutline</b>
+		<b>Scenario</b>
 		<span class="desc-text">Sign up</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='3' class='node scenario fail' status='fail'>
-			<div class='category-list'>
-				<span class='category label white-text'>@Login</span>
-				<span class='category label white-text'>@SignUp</span>
-			</div>
+		<li test-id='3' class='node given pass' status='pass'>
 			
-			<b>Scenario</b>
+			<b>Given</b>
 			
-			<span class="bdd-step-name">Sign up</span>
+			<span class="bdd-step-name">Given User is on the login page</span>
+				<div class='pre'>passed</div>
 			
-				<ul class='steps'>
-					<li test-id='4' class='node given fail' status='fail'><b>Given</b>
-						<span class="bdd-step-name">Given User is on the login page</span>
-							<div class='pre'><pre>java.lang.NullPointerException
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy19.isDisplayed(Unknown Source)
-	at pageObjectsAndActions.LoginPage.applicationLogoDispalyed(LoginPage.java:43)
-	at StepDefinitions.StepDefinitions.userIsOnTheLoginPage(StepDefinitions.java:20)
-	at ✽.Given User is on the login page(LoginWithLockedOutUser.feature:7)
-</pre></div>
-					</li>
-					<li test-id='5' class='node when skip' status='skip'><b>When</b>
-						<span class="bdd-step-name">When User captures username and password "locked_out_user","secret_sauce"</span>
-							<div class='pre'>skipped</div>
-					</li>
-					<li test-id='6' class='node then skip' status='skip'><b>Then</b>
-						<span class="bdd-step-name">Then Locked Out User not logged in successfully and error displayed</span>
-							<div class='pre'>skipped</div>
-					</li>
-				</ul>
+		</li>
+		<li test-id='4' class='node when fail' status='fail'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When User captures username and password "<username>","<password>"</span>
+				<div class='pre'><textarea>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input class="gNO89b" value="Google Search" aria-label="Google Search" name="btnK" role="button" tabindex="0" type="submit" data-ved="0ahUKEwi296W6lKWCAxWkWUEAHUP6BEcQ4dUDCA8"> is not clickable at point (615, 315). Other element would receive the click: <span>...</span>
+  (Session info: MicrosoftEdge=118.0.2088.76)
+Build info: version: '3.141.5', revision: 'd54ebd709a', time: '2018-11-06T11:42:16'
+System info: host: 'srinivass-MBP', ip: 'fe80:0:0:0:1474:57ea:f44f:8353%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.2.1', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 118.0.2088.76, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:53636}, msedge: {msedgedriverVersion: 118.0.2088.76 (d3ddcf1d51d5..., userDataDir: /var/folders/z6/vt8w8tld0d9...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c0c9721969f290f8ae26fcbc81e4886a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at StepDefinitions.StepDefinitions.user_captures_username_and_password(StepDefinitions.java:36)
+	at ✽.When User captures username and password "<username>","<password>"(Sample.feature:8)
+</textarea></div>
+			
 		</li>
 	</ul>
 </div>
@@ -289,13 +295,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>@Login</span>
 						<span class='category-status right'>
-							<span class='label fail'>2</span>
+							<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
 							
-							<span class='label red lighten-1 white-text'>Failed: 2</span>
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -310,13 +316,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 25, 2022 05:26:27 PM</td>
+										<td>Nov 2, 2023 12:59:03 PM</td>
 										<td class='linked' test-id='1'>Locked out user login</td>
-										<td><span class='test-status fail'>fail</span></td>
-									</tr>
-									<tr>
-										<td>Sep 25, 2022 05:26:27 PM</td>
-										<td class='linked' test-id='3'>Locked out user login.Sign up.Sign up</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
@@ -349,8 +350,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 25, 2022 05:26:27 PM</td>
-										<td class='linked' test-id='3'>Locked out user login.Sign up.Sign up</td>
+										<td>Nov 2, 2023 12:59:03 PM</td>
+										<td class='linked' test-id='2'>Locked out user login.Sign up</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
@@ -397,7 +398,7 @@
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>java.lang.NullPointerException</span>
+                                <span class='exception-name'>org.openqa.selenium.ElementClickInterceptedException</span>
                                 <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
                             </div>
                             <div class='exception-content hide'>
@@ -412,16 +413,30 @@
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Sep 25, 2022 05:26:27 PM</td>
-                                                        <td class='linked' test-id='4'>Locked out user login.Sign up.Sign up.Given User is on the login page</td>
-                                                        <td><pre><pre>java.lang.NullPointerException
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy19.isDisplayed(Unknown Source)
-	at pageObjectsAndActions.LoginPage.applicationLogoDispalyed(LoginPage.java:43)
-	at StepDefinitions.StepDefinitions.userIsOnTheLoginPage(StepDefinitions.java:20)
-	at ✽.Given User is on the login page(LoginWithLockedOutUser.feature:7)
-</pre></pre></td>
+                                                        <td>Nov 2, 2023 12:59:16 PM</td>
+                                                        <td class='linked' test-id='4'>Locked out user login.Sign up.When User captures username and password "<username>","<password>"</td>
+                                                        <td><pre><textarea>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input class="gNO89b" value="Google Search" aria-label="Google Search" name="btnK" role="button" tabindex="0" type="submit" data-ved="0ahUKEwi296W6lKWCAxWkWUEAHUP6BEcQ4dUDCA8"> is not clickable at point (615, 315). Other element would receive the click: <span>...</span>
+  (Session info: MicrosoftEdge=118.0.2088.76)
+Build info: version: '3.141.5', revision: 'd54ebd709a', time: '2018-11-06T11:42:16'
+System info: host: 'srinivass-MBP', ip: 'fe80:0:0:0:1474:57ea:f44f:8353%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.2.1', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 118.0.2088.76, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:53636}, msedge: {msedgedriverVersion: 118.0.2088.76 (d3ddcf1d51d5..., userDataDir: /var/folders/z6/vt8w8tld0d9...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c0c9721969f290f8ae26fcbc81e4886a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at StepDefinitions.StepDefinitions.user_captures_username_and_password(StepDefinitions.java:36)
+	at ✽.When User captures username and password "<username>","<password>"(Sample.feature:8)
+</textarea></pre></td>
                                                     </tr>
                                         </tbody>
                                     </table>
@@ -459,53 +474,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 25, 2022 05:26:27 PM</div>
+					<div class='panel-lead'>Nov 2, 2023 12:59:03 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 25, 2022 05:26:27 PM</div>
+			 		<div class='panel-lead'>Nov 2, 2023 12:59:22 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 0s+257ms</div>
-				</div>
-			</div>
-			<div class='col s4'>
-				<div class='card-panel dashboard-environment'>
-					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
-					
-					<table>
-						<tr>
-							<th>Name</th>
-							<th>Value</th>
-						</tr>
-							<tr>
-								<td>User Name</td>
-								<td>Jyothsna Talasani</td>
-							</tr>
-							<tr>
-								<td>Application Name</td>
-								<td>Online Shopping</td>
-							</tr>
-							<tr>
-								<td>Operating System Type</td>
-								<td>Mac OS X</td>
-							</tr>
-							<tr>
-								<td>Environment</td>
-								<td>QA</td>
-							</tr>
-					</table>
+					<div class='panel-lead'>0h 0m 19s+752ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -523,7 +510,7 @@
 						<tr>
 							<td>@Login</td>
 							<td>0</td>
-							<td>2</td>
+							<td>1</td>
 							<td>0</td>
 							<td>
 									0%
@@ -545,15 +532,6 @@
 	</div>
 </div>
 <!-- dashboard view -->
-<div id='testrunner-logs-view' class='view hide'>
-	<div class='card-panel transparent np-v'>
-		<h5>TestRunner Logs</h5>
-		
-		<div class='card-panel'>
-				Test Execution Cucumber Report
-		</div>
-	</div>
-</div>
 <!-- testrunner-logs view -->
 		</div>
 		<!-- container -->
@@ -577,14 +555,14 @@
 				infoChild: 0,
 				exceptionsChild: 1,
 				
-				passGrandChild: 0,
+				passGrandChild: 1,
 				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 2,
+				skipGrandChild: 0,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 3,
+				exceptionsGrandChild: 1,
 			};
 		</script>
 		

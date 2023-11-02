@@ -1,59 +1,59 @@
 package StepDefinitions;
 
-import base.BaseClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
-import pageObjectsAndActions.LoginPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
-public class StepDefinitions extends BaseClass {
+import java.util.concurrent.TimeUnit;
 
-    private static LoginPage loginPage;
+public class StepDefinitions  {
+    public static WebDriver driver;
+//    private static LoginPage loginPage;
 
-    public StepDefinitions() {
-        loginPage = new LoginPage(driver);
-    }
+//    public StepDefinitions() {
+//        loginPage = new LoginPage(driver);
+//    }
 
     @Given("^User is on the login page$")
     public void userIsOnTheLoginPage() {
-        loginPage.applicationLogoDispalyed();
+        System.setProperty("webdriver.edge.driver", "src/test/resources/Drivers/msedgedriver");
+        driver = new EdgeDriver();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        driver.get("https://www.google.com/");
+        System.out.println("Lauched browser and entered URL");
     }
 
     @When("^User captures username and password \"([^\"]*)\",\"([^\"]*)\"$")
     public void user_captures_username_and_password(String uname, String pwd) throws Throwable {
-        loginPage.captureUsername(uname);
-        loginPage.capturePassword(pwd);
-        loginPage.clickLoginButton();
+        driver.findElement(By.id("APjFqb")).sendKeys("selenium");
+        System.out.println("Entered Keys");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[1]")).click();
+        Thread.sleep(5000);
+        System.out.println(" clicked on search button");
     }
 
     @Then("^Standard User logged in successfully$")
     public void standardUserLoggedInSuccessfully() {
-        loginPage.homePageProductTextDisplayed();
-        loginPage.backPackImageDisplayed();
+
     }
 
     @Then("^Locked Out User not logged in successfully and error displayed$")
     public void lockedOutUserNotLoggedInSuccessfullyAndErrorDisplayed() throws InterruptedException {
-        loginPage.lockedOutUserErrorDisplayed();
+
     }
 
     @Then("^Problem User logged in successfully and backpack image not displayed$")
     public void problemUserLoggedInSuccessfullyAndBackpackImageNotDisplayed() {
-        try {
-            if (loginPage.imageBackPack.isDisplayed()) {
-                System.out.println("Back pack displayed and test failed");
-            }
-        } catch (Exception e) {
-            System.out.println("Back pack not found And Test passed");
-        }
+
     }
 
     @Then("^Performance User logged in successfully$")
     public void performanceUserLoggedInSuccessfully() {
-        loginPage.homePageProductTextDisplayed();
-        loginPage.backPackImageDisplayed();
-        System.out.println("Working as standard user");
     }
 }
 

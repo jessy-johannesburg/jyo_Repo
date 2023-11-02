@@ -3,18 +3,17 @@
     "line": 3,
     "elements": [
       {
-        "line": 12,
+        "line": 6,
         "name": "Sign up",
         "description": "",
-        "id": "locked-out-user-login;sign-up;;2",
+        "id": "locked-out-user-login;sign-up",
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 109519237,
-              "error_message": "java.lang.NullPointerException\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy19.isDisplayed(Unknown Source)\n\tat pageObjectsAndActions.LoginPage.applicationLogoDispalyed(LoginPage.java:43)\n\tat StepDefinitions.StepDefinitions.userIsOnTheLoginPage(StepDefinitions.java:20)\n\tat ✽.Given User is on the login page(LoginWithLockedOutUser.feature:7)\n",
-              "status": "failed"
+              "duration": 12984204222,
+              "status": "passed"
             },
             "line": 7,
             "name": "User is on the login page",
@@ -25,46 +24,29 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 6549317766,
+              "error_message": "org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element \u003cinput class\u003d\"gNO89b\" value\u003d\"Google Search\" aria-label\u003d\"Google Search\" name\u003d\"btnK\" role\u003d\"button\" tabindex\u003d\"0\" type\u003d\"submit\" data-ved\u003d\"0ahUKEwi296W6lKWCAxWkWUEAHUP6BEcQ4dUDCA8\"\u003e is not clickable at point (615, 315). Other element would receive the click: \u003cspan\u003e...\u003c/span\u003e\n  (Session info: MicrosoftEdge\u003d118.0.2088.76)\nBuild info: version: \u00273.141.5\u0027, revision: \u0027d54ebd709a\u0027, time: \u00272018-11-06T11:42:16\u0027\nSystem info: host: \u0027srinivass-MBP\u0027, ip: \u0027fe80:0:0:0:1474:57ea:f44f:8353%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002713.2.1\u0027, java.version: \u00271.8.0_321\u0027\nDriver info: org.openqa.selenium.edge.EdgeDriver\nCapabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 118.0.2088.76, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:53636}, msedge: {msedgedriverVersion: 118.0.2088.76 (d3ddcf1d51d5..., userDataDir: /var/folders/z6/vt8w8tld0d9...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: c0c9721969f290f8ae26fcbc81e4886a\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat StepDefinitions.StepDefinitions.user_captures_username_and_password(StepDefinitions.java:36)\n\tat ✽.When User captures username and password \"\u003cusername\u003e\",\"\u003cpassword\u003e\"(Sample.feature:8)\n",
+              "status": "failed"
             },
             "line": 8,
-            "name": "User captures username and password \"locked_out_user\",\"secret_sauce\"",
+            "name": "User captures username and password \"\u003cusername\u003e\",\"\u003cpassword\u003e\"",
             "match": {
               "arguments": [
                 {
-                  "val": "locked_out_user",
+                  "val": "\u003cusername\u003e",
                   "offset": 37
                 },
                 {
-                  "val": "secret_sauce",
-                  "offset": 55
+                  "val": "\u003cpassword\u003e",
+                  "offset": 50
                 }
               ],
               "location": "StepDefinitions.user_captures_username_and_password(String,String)"
             },
-            "matchedColumns": [
-              0,
-              1
-            ],
             "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 9,
-            "name": "Locked Out User not logged in successfully and error displayed",
-            "match": {
-              "location": "StepDefinitions.lockedOutUserNotLoggedInSuccessfullyAndErrorDisplayed()"
-            },
-            "keyword": "Then "
           }
         ],
         "tags": [
-          {
-            "line": 1,
-            "name": "@Login"
-          },
           {
             "line": 5,
             "name": "@SignUp"
@@ -76,7 +58,7 @@
     "description": "",
     "id": "locked-out-user-login",
     "keyword": "Feature",
-    "uri": "LoginWithLockedOutUser.feature",
+    "uri": "Sample.feature",
     "tags": [
       {
         "line": 1,
