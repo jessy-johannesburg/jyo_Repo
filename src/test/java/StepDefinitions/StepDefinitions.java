@@ -29,36 +29,36 @@ public void launchBrowser(){
 }
     @Given("^User is on the login page$")
     public void userIsOnTheLoginPage() {
-        driver.get("https://www.amazon.in/");
+        driver.get("https://www.facebook.com/");
         System.out.println("Lauched browser and entered URL");
     }
 
-    @When("^User captures MobileNumber and password \"([^\"]*)\",\"([^\"]*)\"$")
-    public void UserCapturesMobileNumberAndPassword(String mobnum, String pwd) throws Throwable {
-        driver.findElement(By.id("nav-link-accountList")).click();
-        driver.findElement(By.id("ap_email")).sendKeys("9966477626");
-        System.out.println("Entered mobnum");
-        driver.findElement(By.id("continue")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.id("ap_password")).sendKeys("Sriraju.5");
-        Thread.sleep(5000);
+    @When("^User captures email and password \"([^\"]*)\",\"([^\"]*)\"$")
+    public void UserCapturesEmailAndPassword(String email, String pwd) throws Throwable {
+//        driver.findElement(By.id("nav-link-accountList")).click();
+        driver.findElement(By.id("email")).sendKeys("srinika55@gmail.com");
+        System.out.println("Entered email");
+        driver.findElement(By.id("pass")).sendKeys("Sriraju.5");
+        System.out.println("Entered password");
+
+
 
 
     }
 
     @Then("^User logged in successfully$")
     public void UserLoggedInSuccessfully() {
-        driver.findElement(By.id("signInSubmit")).click();
-        System.out.println("user logged in siccessfully");
+        driver.findElement(By.name("login")).click();
+        System.out.println("user logged in successfully");
 
     }
 
-    @Then("^User selects Electronic option$")
-    public void UserSelectsElectronicOption() throws InterruptedException {
-        driver.findElement(By.linkText("Electronics")).click();
-        System.out.println("selected electronics");
-        Thread.sleep(3000);
-    }
+//    @Then("^User selects Electronic option$")
+//    public void UserSelectsElectronicOption() throws InterruptedException {
+//        driver.findElement(By.linkText("Electronics")).click();
+//        System.out.println("selected electronics");
+//        Thread.sleep(3000);
+//    }
 
 
 @After
