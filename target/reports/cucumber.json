@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 1672481300,
+              "duration": 2176055900,
               "status": "passed"
             },
             "match": {
@@ -17,24 +17,13 @@
         "line": 13,
         "name": "Sign up",
         "description": "",
-        "id": "amazon-login;sign-up;;2",
-        "after": [
-          {
-            "result": {
-              "duration": 557536600,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepDefinitions.closeBrowser()"
-            }
-          }
-        ],
+        "id": "facebook-login;sign-up;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 653775900,
+              "duration": 1199593500,
               "status": "passed"
             },
             "line": 7,
@@ -46,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 127982100,
+              "duration": 566366600,
               "status": "passed"
             },
             "line": 8,
@@ -72,13 +61,25 @@
           },
           {
             "result": {
-              "duration": 66957200,
+              "duration": 213179000,
               "status": "passed"
             },
             "line": 9,
             "name": "User logged in successfully",
             "match": {
               "location": "StepDefinitions.UserLoggedInSuccessfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14141679600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User selects Allow button",
+            "match": {
+              "location": "StepDefinitions.UserSelectsAllowButton()"
             },
             "keyword": "Then "
           }
@@ -95,11 +96,11 @@
         ]
       }
     ],
-    "name": "Amazon Login",
+    "name": "Facebook Login",
     "description": "",
-    "id": "amazon-login",
+    "id": "facebook-login",
     "keyword": "Feature",
-    "uri": "AmazonLogin.feature",
+    "uri": "FacebookLogin.feature",
     "tags": [
       {
         "line": 1,
