@@ -8,7 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SampleProject" />
         <module name="Assginment_Investec" />
+        <module name="Web-Cucumber" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AutomationWithAllPlatforms" target="1.8" />
+      <module name="CucumberModule" target="1.8" />
+      <module name="Web-Cucumber" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
